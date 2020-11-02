@@ -8,14 +8,17 @@ namespace ApiResource.Models
         public Guid Id { get; }
         public string Name { get; }
         public string Username { get; }
-        public string Token { get; }
+        public string AccessToken { get; }
+        
+        public int ExpiresIn { get; }
 
-        public AuthenticationResponse(User user, string token)
+        public AuthenticationResponse(User user, string token, int expiry)
         {
             Id = user.Id;
             Name = user.Name;
             Username = user.Username;
-            Token = token;
+            AccessToken = token;
+            ExpiresIn = expiry;
         }
     }
 }
