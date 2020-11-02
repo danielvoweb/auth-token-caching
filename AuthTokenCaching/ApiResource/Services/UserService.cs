@@ -31,7 +31,7 @@ namespace ApiResource.Services
         {
             new User
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.Parse("3e130be5-4d3d-49a4-aaaf-a33fe57e53b9"),
                 Name = "sample user",
                 Username = "username",
                 Password = "password"
