@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using ApiResource.Models;
 using ApiResource.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,7 @@ namespace ApiResource.Controllers
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate([FromBody]AuthenticationRequest request)
         {
+            Console.WriteLine("Request: /authenticate");
             var response = await _userService.Authenticate(request.Username, request.Password);
             if (response == null)
                 return BadRequest(new {message = "Username or password is incorrect."});
