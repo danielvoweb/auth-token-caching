@@ -18,7 +18,6 @@ namespace ApiResource.Controllers
         public async Task<IActionResult> Authenticate([FromBody]AuthenticationRequest request)
         {
             var response = await _userService.Authenticate(request.Username, request.Password);
-
             if (response == null)
                 return BadRequest(new {message = "Username or password is incorrect."});
 
